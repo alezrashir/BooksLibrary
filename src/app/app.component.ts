@@ -29,7 +29,7 @@ export class AppComponent implements  OnInit {
   ngOnInit() {
 
     const posts$ = Observable
-      .ajax('http://localhost:4200/assets/data/books.json')
+      .ajax('https://bookslibraryshir.herokuapp.com/assets/data/books.json')
       .map(e => e.response);
 
     const htmlSubscription = posts$
