@@ -5,17 +5,28 @@
 
 </div>
 
-<div class="container" >
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <div id="for1" *ngFor="let item of Books" fxFlex="20%">
 
- <div id="for1" *ngFor="let item of Books" >
+    <mat-card-title>{{item.title}}<br/></mat-card-title>
 
-    <p>{{item.title}}<br/></p>
+    <mat-card-subtitle>Id : {{item.id}}</mat-card-subtitle>
 
-    <p>Id : {{item.id}}</p>
+    <img mat-card-image class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Book_icon_%28closed%29_-_Blue_and_gold.svg/2000px-Book_icon_%28closed%29_-_Blue_and_gold.svg.png">
+
+    <mat-card-content>
+      <p>
+        Author Name :{{item.author}} <br>
+      Published Date :{{item.publish}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="delete(item)">Delete</button>
+      <button mat-raised-button (click)="edit(item)">Edit</button>
+    </mat-card-actions>
+
 
 
   </div>
-
 
 </div>
 
